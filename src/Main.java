@@ -12,28 +12,13 @@ public class Main {
                 new User(3, "Vusal", "Rehimov")
         );
 
-//List to Set and print set data without stream
-
-/*        Set<User> userSet = new HashSet<>();
-        for (User u:userList){
-            if(u.name.startsWith("N"))
-                userSet.add(u);
-        }
-        for(User u: userSet){
-            System.out.println(u);
-        }*/
-
-//List to Set and print set data with stream
-
-userList.stream()
+        userList.stream()
         .filter(user -> {
             if(user.getName().startsWith("N"))
                 return true;
             return false;
         })
         .collect(Collectors.toSet()).forEach(System.out::println);
-//        userList.stream().forEach(System.out::println);
-
 
         List<UserResponse> userResponseList = userList.stream().map(user -> {
             UserResponse userResponse = new UserResponse();
@@ -41,27 +26,6 @@ userList.stream()
             userResponse.setSurname(user.getSurname());
             return userResponse;
         }).collect(Collectors.toList());
-
-
-        //Map<Integer, User> userMap = new HashMap<>();
-        //EntrySet
-        //List<User>
-        //userMap.put(1, new User);
-        //userMap.put(15, new User);
-
-
-
-
-
-
-
-
-/*        for(int i = 0;i< userList.size();i++){
-            System.out.print(userList.get(i));
-        }*/
-
-       // userList.stream().forEach(user -> User.printFullName(user));
-
 
     }
 
