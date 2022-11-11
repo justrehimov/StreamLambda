@@ -22,7 +22,6 @@ public class Main {
 
         List<UserResponse> userResponseList = userList.stream().map(user -> {
             UserResponse userResponse = new UserResponse();
-            userResponse.setName(user.getName());
             userResponse.setSurname(user.getSurname());
             return userResponse;
         }).collect(Collectors.toList());
