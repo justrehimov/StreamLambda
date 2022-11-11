@@ -20,6 +20,12 @@ public class Main {
         })
         .collect(Collectors.toSet()).forEach(System.out::println);
 
+        List<UserResponse> userResponseList = userList.stream().map(user -> {
+            UserResponse userResponse = new UserResponse();
+            userResponse.setSurname(user.getSurname());
+            return userResponse;
+        }).collect(Collectors.toList());
+
     }
 
     static class UserResponse{
